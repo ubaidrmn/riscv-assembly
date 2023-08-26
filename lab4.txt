@@ -1,0 +1,41 @@
+f x3
+g x4
+h x5
+i x1
+j x2
+
+li x4 1
+li x5 2
+li x1 1
+li x2 1
+beq x1, x2, then
+sub x3, x4, x5
+j skip
+then: add x3, x4, x5
+skip: nop
+
+task 2
+li x1, 3
+li x3, 2
+li x4, 1
+li x6, 2
+li x7, 1
+li x5, 1
+li x8 2
+li x9, 3
+
+beq x1, x0, branch1
+bge x1, x5, branch2
+bge x1, x8, branch3
+beq x1, x9, branch4
+
+branch1: add x2, x3, x4
+j skip
+branch2: add x2, x6, x7
+j skip
+branch3: sub x2, x6, x7
+j skip
+branch4: sub x2, x3, x4
+skip: nop
+
+# k=x1, f=x2, i=x3, j=x4, g=x6, h=x7

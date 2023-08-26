@@ -1,0 +1,10 @@
+li x1, 7
+li x2, 1
+sub x4, x1, x2
+sra x3, x1, x2
+sra x5, x4, x2
+beq x5, x3, number_is_odd
+li x10, 0
+j skip
+number_is_odd: li x10, 1
+skip: nop

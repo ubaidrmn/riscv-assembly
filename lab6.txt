@@ -1,0 +1,6 @@
+li x1, 0
+bgtz x1, greater
+li x2, 0
+j skip
+greater: li x2, 1
+skip: nop

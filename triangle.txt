@@ -1,0 +1,22 @@
+li x1, 2
+li x2, 3
+li x3, 1
+li x4, 0
+li x5, 35
+# x7 is for equilateral
+# x8 is for Iscoceles 
+# x9 is for Scalene
+loop: addi x4, x4, 1
+beq x1, x2, check_if_x2_and_x3_are_equal
+branch1: beq x2, x3, set_isoceles
+beq x1, x2, set_isoceles
+beq x1, x3 set_isoceles
+li x9, 1
+j skip
+check_if_x2_and_x3_are_equal: beq x2, x3, set_equilateral
+j branch1
+set_equilateral: li x7, 1
+j skip
+set_isoceles: li x8, 1
+skip: nop
+bgt x4, x5, loop
